@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Connected Concerns": {
+            "applicationId": "BL5LN0b61O66oHQ2ffbcKtDsOLHYsJSFEsYncuDh", 
+            "masterKey": "qtZZgjwLAYCBuQIt1aDFDp5EwdcZ9BSpmOHfwhA6"
+        }, 
+        "_default": {
+            "link": "Connected Concerns"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.6"
+    }
+}
