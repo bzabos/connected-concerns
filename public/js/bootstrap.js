@@ -14,7 +14,7 @@
     .attr("width", width)
     .attr("height", height);
 
-  d3.json("miserables.json", function(error, graph) {
+  d3.json("/json/graph.json", function(error, graph) {
     force
       .nodes(graph.nodes)
       .links(graph.links)
@@ -24,14 +24,14 @@
       .data(graph.links)
       .enter().append("line")
       .attr("class", "link")
-      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+      .style("stroke-width", function(d) { return Math.sqrt(d.value || 100); });
 
     var node = svg.selectAll(".node")
       .data(graph.nodes)
       .enter().append("circle")
       .attr("class", "node")
       .attr("r", 5)
-      .style("fill", function(d) { return color(d.group); })
+      .style("fill", function(d) { return color(d.id); })
       .call(force.drag);
 
     node.append("title")

@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {"group":1, "name":"Angelina Jolie"},
+    {"group":2, "name":"Brad Pitt"},
+    {"group":3, "name":"Na’ankusé"},
+    {"group":4, "name":"Brett Zabos"},
+    {"group":5, "name":"Volkswagen"},
+    {"group":6, "name":"Animal Cruelty"},
+    {"group":7, "name":"Amanzi Travel"},
+    {"group":8, "name":"EcoTourism"},
+    {"group":9, "name":"Bushmen People"},
+    {"group":10, "name":"Ecosystems"},
+    {"group":11, "name":"False Advertisement"},
+    {"group":12, "name":"Customer Service"},
+    {"group":13, "name":"Indigenous Culture"}
+  ],
+  "links": [
+    {"source": 1, "target": 3,  "verb": "funded"},
+    {"source": 2, "target": 3,  "verb": "funded"},
+    {"source": 3, "target": 6,  "verb": "performed"},
+    {"source": 3, "target": 7,  "verb": "uses"},
+    {"source": 3, "target": 8,  "verb": "contributes"},
+    {"source": 3, "target": 9,  "verb": "employs"},
+    {"source": 4, "target": 3,  "verb": "supported"},
+    {"source": 4, "target": 3,  "verb": "funded"},
+    {"source": 5, "target": 3,  "verb": "used"},
+    {"source": 6, "target": 10, "verb": "destroys"},
+    {"source": 7, "target": 11, "verb": "performed"},
+    {"source": 7, "target": 12, "verb": "ailed"},
+    {"source": 8, "target": 10, "verb": "destroys"},
+    {"source": 8, "target": 13, "verb": "destroys"},
+    {"source": 9, "target": 13, "verb": "dependant"}
+  ]
+}
