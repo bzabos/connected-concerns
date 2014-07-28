@@ -1,18 +1,19 @@
 {
   "nodes": [
-    {"id":0, "name":"Angelina Jolie"},
-    {"id":1, "name":"Brad Pitt"},
-    {"id":2, "name":"Na’ankusé"},
-    {"id":3, "name":"Brett Zabos"},
-    {"id":4, "name":"Volkswagen"},
-    {"id":5, "name":"Animal Cruelty"},
-    {"id":6, "name":"Amanzi Travel"},
-    {"id":7, "name":"EcoTourism"},
-    {"id":8, "name":"Bushmen People"},
-    {"id":9, "name":"Ecosystems"},
-    {"id":10, "name":"False Advertisement"},
-    {"id":11, "name":"Customer Service"},
-    {"id":12, "name":"Indigenous Culture"}
+    {"id":0, "name":"Angelina Jolie", "geo": {"latitude": 34.1588845, "longitude": -118.3569522}},
+    {"id":1, "name":"Brad Pitt", "geo": {"latitude": 34.1588845, "longitude": -118.3569522}},
+    {"id":2, "name":"Na’ankusé", "geo": {"latitude": -22.278025, "longitude": 16.2359296}},
+    {"id":3, "name":"Brett Zabos", "geo": {"latitude": 52.1027043, "longitude": -106.6262104}},
+    {"id":4, "name":"Volkswagen", "geo": {"latitude": 55.3617609, "longitude": -3.4433238}},
+    {"id":5, "name":"Animal Cruelty", "geo": {"latitude": 1.168083, "longitude": -24.604681}},
+    {"id":6, "name":"Amanzi Travel", "geo": {"latitude": 51.494355, "longitude": -2.617156}},
+    {"id":7, "name":"EcoTourism", "geo": {"latitude": 35.553044, "longitude": -42.182806}},
+    {"id":8, "name":"San People", "geo": {"latitude": -23.3025719, "longitude": 22.3266382}},
+    {"id":9, "name":"Ecosystems", "geo": {"latitude": -24.743549, "longitude": 81.215632}},
+    {"id":10, "name":"False Advertisement", "geo": {"latitude": 74.805612, "longitude": 13.364069}},
+    {"id":11, "name":"Customer Service", "geo": {"latitude": 76.543251, "longitude": 37.973444}},
+    {"id":12, "name":"Indigenous Culture", "geo": {"latitude": -46.480776, "longitude": -141.323431}},
+    {"id":13, "name":"Swiss Schools", "geo": {"latitude": 46.8131873, "longitude": 8.2242101}}
   ],
   "links": [
     {"source": 0, "target": 2,  "verb": "funded"},
@@ -29,6 +30,7 @@
     {"source": 6, "target": 11, "verb": "ailed"},
     {"source": 7, "target": 9, "verb": "destroys"},
     {"source": 7, "target": 12, "verb": "destroys"},
-    {"source": 8, "target": 12, "verb": "dependant"}
+    {"source": 8, "target": 12, "verb": "dependant"},
+    {"source": 13, "target": 2, "verb": "support"}
   ]
 }
