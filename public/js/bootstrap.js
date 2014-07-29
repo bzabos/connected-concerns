@@ -56,12 +56,12 @@
   // example 2:
 
   mapGraph = new Datamap({
-    element: document.getElementById("graph"),
-//    scope: 'usa',
+    element: document.getElementById('graph'),
     fills: {
-      defaultFill: "#ABDDA4",
-      win: '#0fa0fa'
+      defaultFill: "#ABDDA4"
+//      win: '#0fa0fa'
     },
+//    scope: 'usa',
 //    data: {
 //      'TX': { fillKey: 'win' },
 //      'FL': { fillKey: 'win' },
@@ -106,53 +106,23 @@
         .text([origin.name, link.verb, destination.name].join(' '));
     });
 
+    var $g = d3.selectAll('g'),
+        $text = $g.select('text');
 
+    var hideText = function () {$text.style('display', 'none')};
+    var redrawText = _(function (e) {
+          $text.style('font-size', 18/e.scale);
+          $text.style('display', 'block');
+        }).debounce(100);
 
-//    d3.selectAll('.datamaps-arc')
-//      .append("text")
-//      .attr("dy", ".31em")
-//      .attr("text-anchor", function(d) {return d.x < 180 ? "start" : "end"})
-//      .attr("transform", function(d) {return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"})
-//      .attr('xlink:href', function(link) {return '#' + [link.verb, link.source, link.target].join('-')})
-//      .text(function(link) {return [link.verb, link.source, link.target].join('-')});
+    var zoom = d3.behavior.zoom()
+          .on("zoom", function () {
+            hideText();
+            $g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+            redrawText(d3.event);
+          });
 
+    mapGraph.svg.call(zoom);
   });
-
-//  arcs.arc([
-//    {
-//      origin: {
-//        latitude: 40.639722,
-//        longitude: -73.778889
-//      },
-//      destination: {
-//        latitude: 37.618889,
-//        longitude: -122.375
-//      }
-//    },
-//    {
-//      origin: {
-//        latitude: 30.194444,
-//        longitude: -97.67
-//      },
-//      destination: {
-//        latitude: 25.793333,
-//        longitude: -80.290556
-//      },
-//      options: {
-//        strokeWidth: 2,
-//        strokeColor: 'rgba(100, 10, 200, 0.4)'
-//      }
-//    },
-//    {
-//      origin: {
-//        latitude: 39.861667,
-//        longitude: -104.673056
-//      },
-//      destination: {
-//        latitude: 35.877778,
-//        longitude: -78.7875
-//      }
-//    }
-//  ],  {strokeWidth: 1, arcSharpness: 1.4});
 
 })();
