@@ -10,7 +10,7 @@
     {"id":7, "name":"EcoTourism", "geo": {"latitude": -50.216783, "longitude": -19.274817}},
     {"id":8, "name":"San People", "geo": {"latitude": -23.3025719, "longitude": 22.3266382}},
     {"id":9, "name":"Ecosystems", "geo": {"latitude": -24.743549, "longitude": 81.215632}},
-    {"id":10, "name":"False Advertisement", "geo": {"latitude": 69.327354, "longitude": -5.915442}},
+    {"id":10, "name":"False Advertisement", "geo": null},
     {"id":11, "name":"Customer Service", "geo": {"latitude": 76.543251, "longitude": 37.973444}},
     {"id":12, "name":"Indigenous Culture", "geo": {"latitude": -46.480776, "longitude": -141.323431}},
     {"id":13, "name":"Swiss Schools", "geo": {"latitude": 46.8131873, "longitude": 8.2242101}}
