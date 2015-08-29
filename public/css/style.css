@@ -1,6 +1,7 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  background: #333;
 }
 
 a {
@@ -8,8 +9,12 @@ a {
 }
 
 .node {
+    cursor: pointer;
+}
+
+.node rect {
     stroke: #fff;
-    stroke-width: 1.5px;
+    stroke-width: 1px;
 }
 
 .link {
