@@ -20,11 +20,26 @@
         .links(graph.links)
         .start();
 
+    // build the arrow.
+    svg.append("defs").selectAll("marker")
+        .data(["end"])      // Different link/path types can be defined here
+      .enter().append("marker")    // This section adds in the arrows
+        .attr("id", String)
+        .attr("viewBox", "0 -5 10 10")
+        .attr("refX", 15)
+        .attr("refY", -1.5)
+        .attr("markerWidth", 6)
+        .attr("markerHeight", 6)
+        .attr("orient", "auto")
+      .append("path")
+        .attr("d", "M0,-5L10,0L0,5");
+
     var link = svg.selectAll(".link")
         .data(graph.links)
         .enter()
           .append("line")
           .attr("class", "link")
+          .attr("marker-end", "url(#end)")
           .style("stroke-width", function (d) {
             return Math.sqrt(d.value || 50);
           });

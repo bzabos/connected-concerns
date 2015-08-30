@@ -2,6 +2,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: normal;
   background: #333;
+  padding: 0;
+  margin: 0;
 }
 
 a {
