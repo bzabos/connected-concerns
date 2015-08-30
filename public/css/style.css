@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: normal;
   background: #333;
   padding: 0;
@@ -14,12 +14,17 @@ a {
     cursor: pointer;
 }
 
-.node rect {
+.link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 2px;
+}
+
+circle {
     stroke: #fff;
     stroke-width: 1px;
 }
 
-.link {
-    stroke: #999;
-    stroke-opacity: .6;
+marker#end {
+    fill: #666;
 }

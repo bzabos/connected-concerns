@@ -6,7 +6,7 @@
   var color = d3.scale.category20();
 
   var force = d3.layout.force()
-      .charge(-120)
+      .charge(-300)
       .linkDistance(250)
       .size([width, height]);
 
@@ -34,60 +34,55 @@
       .append("path")
         .attr("d", "M0,-5L10,0L0,5");
 
-    var link = svg.selectAll(".link")
-        .data(graph.links)
+    // add the links and the arrows
+    var link = svg.append("g").selectAll(".link")
+        .data(force.links())
         .enter()
-          .append("line")
+          .append("path")
           .attr("class", "link")
           .attr("marker-end", "url(#end)")
-          .style("stroke-width", function (d) {
-            return Math.sqrt(d.value || 50);
-          });
+          //.style("stroke-width", function (d) {
+          //  return Math.sqrt(d.value || 50);
+          //});
 
+    // define the nodes
     var node = svg.selectAll(".node")
-        .data(graph.nodes)
+        .data(force.nodes())
         .enter()
           .append('g')
           .attr("class", "node")
-          .attr("width", 100)
-          .attr("height", 100);
+          .call(force.drag);
 
-    node
-          .append("rect")
-            .attr('height', 20)
-            .attr('width', 150)
-            .attr('rx', 5)
-            .attr('ry', 5)
-            .style("fill", function (d) {
-              return color(d.id);
-            });
+    // add the nodes
+    node.append("circle")
+        .attr("r", 5)
+        .style("fill", function (d) {
+          return color(d.id);
+        });
 
-    node
-        .append("text")
-            .attr('x', 2)
-            .attr('y', 18)
-            .style("fill", 'white')
-            .text(function (d) {
-              return d.name;
-            });
-
-    node
-        .call(force.drag);
+    // add the text
+    node.append("text")
+        .attr("x", 12)
+        .attr("dy", ".35em")
+        .text(function(d) { return d.name; })
+        .style("fill", function (d) {
+          return color(d.id);
+        });
 
 
+    // add the curvy lines
     force.on("tick", function () {
-      link
-          .attr("x1", function (d) {
-            return d.source.x;
-          })
-          .attr("y1", function (d) {
-            return d.source.y;
-          })
-          .attr("x2", function (d) {
-            return d.target.x;
-          })
-          .attr("y2", function (d) {
-            return d.target.y;
+        link
+          .attr("d", function(d) {
+            var dx = d.target.x - d.source.x,
+                dy = d.target.y - d.source.y,
+                dr = Math.sqrt(dx * dx + dy * dy);
+            return "M" +
+                d.source.x + "," +
+                d.source.y + "A" +
+                dr + "," + dr + " 0 0,1 " +
+                d.target.x + "," +
+                d.target.y;
           });
 
       node
