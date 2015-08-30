@@ -10,7 +10,7 @@
       .linkDistance(250)
       .size([width, height]);
 
-  var svg = d3.select("body").append("svg")
+  var svg = d3.select("section#graph > svg")
       .attr("width", width)
       .attr("height", height);
 
@@ -39,11 +39,22 @@
         .data(force.links())
         .enter()
           .append("path")
+          .attr('id', function (d) {return d.source.name})
           .attr("class", "link")
-          .attr("marker-end", "url(#end)")
+          .attr("marker-end", "url(#end)");
           //.style("stroke-width", function (d) {
           //  return Math.sqrt(d.value || 50);
           //});
+
+    var link_labels = svg.selectAll('.link-label')
+        .data(force.links())
+        .enter()
+          .append('text')
+          .attr('class', 'verb')
+            .append('textPath')
+            .attr('xlink:href', function (d) {return '#' + d.source.name})
+            .attr('startOffset', '25%')
+            .text(function (d) {return d.verb});
 
     // define the nodes
     var node = svg.selectAll(".node")

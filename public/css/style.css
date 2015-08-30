@@ -28,3 +28,8 @@ circle {
 marker#end {
     fill: #666;
 }
+
+text.verb {
+    fill: beige;
+    text-anchor: middle;
+}
