@@ -6,18 +6,18 @@
   var color = d3.scale.category20();
 
   var force = d3.layout.force()
-      .charge(-300)
-      .linkDistance(250)
+      .charge(-1000)
+      .linkDistance(500)
       .size([width, height]);
 
   var svg = d3.select("section#graph > svg")
       .attr("width", width)
       .attr("height", height);
 
-  d3.json("/json/graph.json", function (error, graph) {
+  d3.json("/api/nodes", function (error, graph) {
     force
         .nodes(graph.nodes)
-        .links(graph.links)
+        .links(graph.edges)
         .start();
 
     // build the arrow.

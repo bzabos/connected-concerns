@@ -15,7 +15,7 @@
     {"id":12, "name":"Indigenous Culture", "geo": {"latitude": -46.480776, "longitude": -141.323431}},
     {"id":13, "name":"Swiss Schools", "geo": {"latitude": 46.8131873, "longitude": 8.2242101}}
   ],
-  "links": [
+  "edges": [
     {"source": 0, "target": 2,  "verb": "funded"},
     {"source": 1, "target": 2,  "verb": "funded"},
     {"source": 2, "target": 5,  "verb": "performed"},
