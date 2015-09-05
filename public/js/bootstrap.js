@@ -14,10 +14,26 @@
       .attr("width", width)
       .attr("height", height);
 
-  d3.json("/api/nodes", function (error, graph) {
+
+  var nodes = [],
+      edges = [];
+
+  d3.json("/api/nodes?q=Na’ankusé", function (error, graph) {
+    // reflow links' source/target properties to be the index of the node which matches the corresponding source_id/target_id
+    nodes.push(graph);
+    nodes = nodes.concat(graph.neighbors);
+    nodes = _.uniq(nodes, false, 'id');
+
+    edges = edges.concat(graph.edges);
+    _.uniq(edges, false, function (e) {return [e.source_id, e.target_id].join()});
+    _.forEach(edges, function (e) {
+      e.source = _.findIndex(nodes, {id: e.source_id});
+      e.target = _.findIndex(nodes, {id: e.target_id});
+    });
+
     force
-        .nodes(graph.nodes)
-        .links(graph.edges)
+        .nodes(nodes)
+        .links(edges)
         .start();
 
     // build the arrow.

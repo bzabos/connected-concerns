@@ -16,21 +16,21 @@
     {"id":13, "name":"Swiss Schools", "geo": {"latitude": 46.8131873, "longitude": 8.2242101}}
   ],
   "edges": [
-    {"source": 0, "target": 2,  "verb": "funded"},
-    {"source": 1, "target": 2,  "verb": "funded"},
-    {"source": 2, "target": 5,  "verb": "performed"},
-    {"source": 2, "target": 6,  "verb": "uses"},
-    {"source": 2, "target": 7,  "verb": "contributes"},
-    {"source": 2, "target": 8,  "verb": "employs"},
-    {"source": 3, "target": 2,  "verb": "supported"},
-    {"source": 3, "target": 2,  "verb": "funded"},
-    {"source": 4, "target": 2,  "verb": "used"},
-    {"source": 5, "target": 9, "verb": "destroys"},
-    {"source": 6, "target": 10, "verb": "performed"},
-    {"source": 6, "target": 11, "verb": "ailed"},
-    {"source": 7, "target": 9, "verb": "destroys"},
-    {"source": 7, "target": 12, "verb": "destroys"},
-    {"source": 8, "target": 12, "verb": "dependant"},
-    {"source": 13, "target": 2, "verb": "support"}
+    {"source_id": 0, "target_id": 2,  "verb": "funded"},
+    {"source_id": 1, "target_id": 2,  "verb": "funded"},
+    {"source_id": 2, "target_id": 5,  "verb": "performed"},
+    {"source_id": 2, "target_id": 6,  "verb": "uses"},
+    {"source_id": 2, "target_id": 7,  "verb": "contributes"},
+    {"source_id": 2, "target_id": 8,  "verb": "employs"},
+    {"source_id": 3, "target_id": 2,  "verb": "supported"},
+    {"source_id": 3, "target_id": 2,  "verb": "funded"},
+    {"source_id": 4, "target_id": 2,  "verb": "used"},
+    {"source_id": 5, "target_id": 9, "verb": "destroys"},
+    {"source_id": 6, "target_id": 10, "verb": "performed"},
+    {"source_id": 6, "target_id": 11, "verb": "ailed"},
+    {"source_id": 7, "target_id": 9, "verb": "destroys"},
+    {"source_id": 7, "target_id": 12, "verb": "destroys"},
+    {"source_id": 8, "target_id": 12, "verb": "dependant"},
+    {"source_id": 13, "target_id": 2, "verb": "support"}
   ]
 }
