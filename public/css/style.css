@@ -1,0 +1,35 @@
+body {
+    font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    background: #333;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 2px;
+}
+
+circle {
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+marker#end {
+    fill: #666;
+}
+
+text.verb {
+    fill: beige;
+    text-anchor: middle;
+}
